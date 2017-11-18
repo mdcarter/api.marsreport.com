@@ -1,0 +1,35 @@
+{
+  "name": "api.marsreport.com",
+  "version": "1.0.0",
+  "description": "Small server for the Mars Report API",
+  "main": "src/index.js",
+  "homepage": "https://api.marsreport.com",
+  "repository": "https://github.com/mdcarter/api.marsreport.com",
+  "author": "Maxime Dehaye <maxime.dehaye@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev",
+    "test": "standard && micro",
+    "deploy": "now"
+  },
+  "dependencies": {
+    "dotenv": "4.0.0",
+    "ioredis": "3.2.1",
+    "micro": "9.0.1",
+    "microrouter": "3.0.0",
+    "node-fetch": "1.7.3"
+  },
+  "devDependencies": {
+    "micro-dev": "1.4.0",
+    "standard": "*"
+  },
+  "now": {
+    "alias": "api.marsreport.com",
+    "env": {
+      "REDIS_HOST": "@mars-report-redis-host",
+      "REDIS_PASSWORD": "@mars-report-redis-password",
+      "REDIS_PORT": "@mars-report-redis-port"
+    }
+  }
+}
